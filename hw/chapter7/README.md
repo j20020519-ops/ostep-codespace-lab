@@ -1,28 +1,19 @@
 # Chapter 7: CPU Scheduling
 
-## Objective
-Explore CPU scheduling policies using the OSTEP CPU scheduling simulator.
+This submission answers the seven CPU-scheduling simulation questions at the end of OSTEP Chapter 7. It uses the official OSTEP `scheduler.py` simulator and stores reproducible `-c` outputs under `data/`.
 
-## Scheduling policies
-- FIFO (First In, First Out)
-- SJF (Shortest Job First)
-- RR (Round Robin)
+## Files
 
-## Experiment setup
-The example workload uses three jobs with service lengths 2, 5, and 8.
-The random seed is 100.
+- `analysis.md`: predictions, simulator results, explanations, and answers for Q1–Q7.
+- `run_experiments.sh`: runs each fixed workload with the OSTEP simulator and writes the output files to `data/`.
+- `data/`: populated by the script; includes the saved output for each experiment.
 
-## Commands
+## Run in Codespaces
 
-### FIFO
-python3 ./ext/ostep-homework/cpu-sched/scheduler.py -p FIFO -j 3 -s 100 -c
+From the repository root, run:
 
-### SJF
-python3 ./ext/ostep-homework/cpu-sched/scheduler.py -p SJF -j 3 -s 100 -c
+```bash
+bash hw/chapter7/run_experiments.sh
+```
 
-### Round Robin (quantum = 1)
-python3 ./ext/ostep-homework/cpu-sched/scheduler.py -p RR -j 3 -s 100 -q 1 -c
-
-## Note
-These are example experiments. Check the official assignment instructions
-to confirm whether additional questions or experiments are required.
+The script checks that the official simulator exists, then saves each run's complete output in `hw/chapter7/data/`. Review the outputs and the answers in `analysis.md` before committing.
